@@ -1,0 +1,1129 @@
+/* 웹 폰트를 정의 */
+@font-face {
+    font-family: 'HancomHoonminjeongeumH'; /* 폰트 이름 지정 */
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2406-1@1.0/HancomHoonminjeongeumH.woff') format('woff'); /* 폰트 파일 경로 */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 기본 본문 스타일 */
+body {
+    color: #333; /* 글자 색상 */
+    font-size: 10px; /* 기본 폰트 크기 */
+    line-height: 1.4; /* 줄 높이 */
+    font-family: 'NanumSquareNeoExtraBold', sans-serif; /* 기본 폰트 설정 */
+    margin: 0; /* 기본 여백 제거 */
+}
+
+/* 이미지 블록 표시 */
+img {
+    display: block;
+}
+
+/* 링크 스타일 제거 */
+a {
+    text-decoration: none;
+}
+
+/* 콘텐츠 감싸는 요소 */
+.inner {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 버튼 기본 스타일 */
+.btn {
+    width: 130px;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: block;
+    transition: .4s;
+}
+
+/* 버튼 호버 상태 스타일 */
+.btn:hover {
+    background-color: #333; /* 배경 색상 변경 */
+    color: #fff; /* 글자 색상 변경 */
+}
+
+/* 버튼 변형 스타일 */
+.btn.btn-reverse {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn.btn-reverse:hover {
+    background-color: transparent;
+    color: #333;
+}
+
+.btn.btn-brown {
+    color: #9d6b48;
+    border-color: #9d6b48;
+}
+
+.btn.btn-brown:hover {
+    color: #fff;
+    background-color: #9d6b48;
+}
+
+.btn.btn-gold {
+    color: #fae953;
+    background-color: #fae953;
+}
+
+.btn.btn-gold:hover {
+    color: #fff;
+    background-color: #fae953;
+}
+
+.btn.btn-white {
+    color: #fff;
+    background-color: #fff;
+}
+
+.btn.btn-white:hover {
+    color: #333;
+    background-color: #fff;
+}
+
+.btn.btn-green {
+    color: #669900;
+    background-color: #669900;
+}
+
+.btn.btn-green:hover {
+    color: #ffffff;
+    background-color: #669900;
+}
+
+.back-to-position {
+    opacity: 0;
+    transition: 1s;
+}
+
+/* 왼쪽에서 오른쪽으로 나올 요소 */
+.back-to-position.to-right {
+    transform: translateX(-150px);
+}
+/* 오른쪽에서 왼쪽으로 나올 요소 */
+.back-to-position.to-left {
+    transform: translateX(150px);
+}
+
+.show .back-to-position {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* 요소 각각 시간 맞추기  */
+.show .back-to-position.delay-0{
+    transition-delay: 0s;
+}
+.show .back-to-position.delay-1{
+    transition-delay: 0.3s;
+}
+.show .back-to-position.delay-2{
+    transition-delay: 0.6s;
+}
+.show .back-to-position.delay-3{
+    transition-delay: 0.9s;
+}
+
+
+
+
+
+/* 헤더 스타일 */
+#head_layout {
+    background-color: rgb(250, 247, 247); /* 배경 색상 */
+    border-bottom: 3px solid #000; /* 하단 테두리 */
+    position: fixed; /* 고정 위치 */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10; /* 레이어 순서 */
+}
+
+/* 헤더 내의 내부 요소 스타일 */
+#head_layout > .inner {
+    height: 120px; /* 높이 */
+    display: flex;
+    justify-content: space-between; /* 공간 분배 */
+    align-items: center; /* 수직 정렬 */
+}
+
+/* 로고 이미지 스타일 */
+#head_layout h1 .logo img {
+    height: 75px; /* 높이 */
+}
+
+/* 유틸리티 메뉴 스타일 */
+#head_layout .util_menu {
+    display: flex;
+    align-items: center; /* 수직 정렬 */
+}
+
+/* 유틸리티 메뉴 항목 스타일 */
+#head_layout .util_menu ul.menu {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none; /* 목록 스타일 제거 */
+}
+
+#head_layout .util_menu ul.menu li {
+    position: relative; /* 상대 위치 */
+}
+
+/* 메뉴 항목 사이의 구분선 스타일 */
+#head_layout .util_menu ul.menu li:not(:first-child)::before {
+    content: '';
+    width: 1px;
+    height: 12px;
+    background-color: #555; /* 구분선 색상 */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+/* 메뉴 링크 스타일 */
+#head_layout .util_menu ul.menu li > a {
+    font-size: 12px; /* 폰트 크기 */
+    padding: 11px 16px; /* 패딩 */
+    display: block; /* 블록 요소로 설정 */
+    color: #656565; /* 글자 색상 */
+}
+
+/* 메뉴 링크 호버 상태 스타일 */
+#head_layout .util_menu ul.menu li > a:hover {
+    color: #000; /* 글자 색상 변경 */
+}
+
+/* 검색창 스타일 */
+#head_layout .util_menu .search {
+    height: 34px; /* 높이 */
+    position: relative; /* 상대 위치 */
+}
+
+#head_layout .util_menu .search input {
+    border: 1px solid #ccc; /* 테두리 */
+    width: 36px; /* 너비 */
+    height: 34px; /* 높이 */
+    padding: 4px 10px; /* 패딩 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 너비 계산 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    outline: 0; /* 기본 윤곽선 제거 */
+    color: #777; /* 글자 색상 */
+    transition: width 0.3s; /* 너비 변경 시 전환 효과 */
+    font-size: 12px; /* 폰트 크기 */
+}
+
+/* 검색창 포커스 시 스타일 */
+#head_layout .util_menu .search input:focus {
+    width: 190px; /* 너비 확대 */
+    border-color: #669900; /* 테두리 색상 변경 */
+}
+
+/* 검색 아이콘 스타일 */
+#head_layout .util_menu .search span {
+    position: absolute; /* 절대 위치 */
+    height: 24px; /* 높이 */
+    top: 0;
+    bottom: 0;
+    right: 5px;
+    margin: auto;
+    opacity: 1; /* 불투명도 */
+    transition: 0.4s; /* 전환 효과 */
+}
+
+/* 검색창이 포커스된 상태일 때 아이콘 숨김 */
+#head_layout .util_menu .search.focused span {
+    opacity: 0;
+}
+
+/* 메인 메뉴 스타일 */
+#head_layout .main-menu {
+    display: flex;
+}
+
+/* 메인 메뉴 항목 스타일 */
+#head_layout .main-menu .item {
+    position: relative; /* 상대 위치 */
+}
+
+/* 메인 메뉴 항목 이름 스타일 */
+#head_layout .main-menu .item_name {
+    padding: 20px; /* 패딩 */
+}
+
+/* 메인 메뉴 항목 호버 상태 스타일 */
+#head_layout .main-menu .item:hover .item_name {
+    background-color: #555; /* 배경 색상 변경 */
+    color: rgb(95, 239, 51); /* 글자 색상 변경 */
+}
+
+/* 메인 메뉴 항목 내용 스타일 */
+#head_layout .main-menu .item .item_contents {
+    width: 100%;
+    position: fixed; /* 고정 위치 */
+    left: 0;
+    right: 0;
+    max-height: 0; /* 초기 높이 설정 */
+    overflow: hidden; /* 오버플로우 숨김 */
+    transition: max-height 0.4s; /* 높이 전환 효과 */
+}
+
+/* 메인 메뉴 항목 호버 시 내용 표시 */
+#head_layout .main-menu .item:hover .item_contents {
+    max-height: 550px; /* 최대 높이 */
+}
+
+/* 메인 메뉴 항목 내용 내부 메뉴 스타일 */
+#head_layout .main-menu .item .item_contents .content_menu {
+    background-color: #555; /* 배경 색상 */
+    display: flex;
+}
+
+/* 내부 메뉴의 리스트 스타일 */
+#head_layout .main-menu .item .item_contents .content_menu > ul {
+    padding: 20px 0; /* 패딩 */
+    margin: 0;
+    list-style: none; /* 목록 스타일 제거 */
+}
+
+/* 내부 메뉴의 리스트 항목 스타일 */
+#head_layout .main-menu .item .item_contents .content_menu > ul > li {
+    width: 220px; /* 너비 */
+}
+
+/* 내부 메뉴의 제목 스타일 */
+#head_layout .main-menu .item .item_contents .content_menu > ul > li p {
+    padding: 5px 0 12px 0; /* 패딩 */
+    font-size: 10px; /* 폰트 크기 */
+    color: white; /* 글자 색상 */
+}
+
+/* 내부 메뉴의 항목 스타일 */
+#head_layout .main-menu .item .item_contents .content_menu > ul > li li {
+    color: white; /* 글자 색상 */
+    font-size: 12px; /* 폰트 크기 */
+    padding: 5px 0; /* 패딩 */
+    cursor: pointer; /* 커서 모양 변경 */
+}
+
+/* 내부 메뉴 항목 호버 상태 스타일 */
+#head_layout .main-menu .item .item_contents .content_menu > ul > li li:hover {
+    color: rgb(95, 239, 51); /* 글자 색상 변경 */
+}
+
+/* 배지 스타일 */
+#head_layout .badges {
+    position: fixed; /* 고정 위치 */
+    top: 135px; /* 상단 위치 */
+    right: 20px; /* 우측 위치 */
+}
+
+/* 배지 개별 스타일 */
+#head_layout .badges .badge {
+    border-radius: 10px; /* 모서리 둥글게 */
+    overflow: hidden; /* 오버플로우 숨김 */
+    margin-bottom: 8px; /* 하단 여백 */
+    cursor: pointer; /* 커서 모양 변경 */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); /* 그림자 효과 */
+}
+
+/* 본문 레이아웃 스타일 */
+#body_layout {
+    margin-top: 122px; /* 상단 여백 */
+}
+
+/* 배너 스타일 */
+#body_layout .banner {
+    background-image: url(../image/25th_top_bg.png); /* 배경 이미지 */
+    background-repeat: no-repeat; /* 배경 반복 없음 */
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center top; /* 배경 위치 조정 */
+    position: relative; /* 상대 위치 */
+}
+
+/* 배너 내의 내부 요소 스타일 */
+#body_layout .banner .inner {
+    height: 500px; /* 높이 */
+    position: relative; /* 상대 위치 */
+}
+
+/* 배너 제목 스타일 */
+#body_layout .banner .title {
+    position: absolute; /* 절대 위치 */
+    top: 50%; /* 상단 중앙 */
+    transform: translateY(-50%); /* 수직 중앙 정렬 */
+    text-align: center; /* 가운데 정렬 */
+}
+
+/* 배너 제목 이미지 스타일 */
+#body_layout .banner .title img {
+    width: 80%; /* 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+/* 배너 제목 링크 스타일 */
+#body_layout .banner .title a {
+    margin: 25px auto 0; /* 여백 */
+}
+
+/* 배너 내의 이미지 스타일 */
+#body_layout .banner .inner > img {
+    position: absolute; /* 절대 위치 */
+    width: 18%; /* 너비 */
+}
+
+/* 배너 내의 두 번째 이미지 스타일 */
+#body_layout .banner .inner > img:nth-child(2) {
+    top: 16%; /* 상단 위치 */
+    left: 30%; /* 좌측 위치 */
+    width: 16%; /* 너비 */
+}
+
+/* 배너 내의 세 번째 이미지 스타일 */
+#body_layout .banner .inner > img:nth-child(3) {
+    top: 18%; /* 상단 위치 */
+    left: 43%; /* 좌측 위치 */
+    width: 17%; /* 너비 */
+}
+
+/* 배너 내의 네 번째 이미지 스타일 */
+#body_layout .banner .inner > img:nth-child(4) {
+    top: 17%; /* 상단 위치 */
+    left: 55%; /* 좌측 위치 */
+    width: 19%; /* 너비 */
+}
+
+/* 배너 내의 다섯 번째 이미지 스타일 */
+#body_layout .banner .inner > img:nth-child(5) {
+    top: 24%; /* 상단 위치 */
+    left: 70%; /* 좌측 위치 */
+    width: 22%; /* 너비 */
+}
+
+/* 공지 사항 스타일 */
+#body_layout .notice {
+    position: relative; /* 상대 위치 */
+}
+
+/* 공지 사항 왼쪽 배경 스타일 */
+#body_layout .notice .bg_left {
+    background-color: #000; /* 배경 색상 */
+    width: 50%; /* 너비 */
+    height: 100%; /* 높이 */
+    position: absolute; /* 절대 위치 */
+    left: 0; /* 좌측 위치 */
+    top: 0; /* 상단 위치 */
+}
+
+/* 공지 사항 오른쪽 배경 스타일 */
+#body_layout .notice .bg_right {
+    background-color: #fff; /* 배경 색상 */
+    width: 50%; /* 너비 */
+    height: 100%; /* 높이 */
+    position: absolute; /* 절대 위치 */
+    right: 0; /* 우측 위치 */
+    top: 0; /* 상단 위치 */
+}
+
+/* 공지 사항 내부 스타일 */
+#body_layout .notice .inner {
+    height: 60px; /* 높이 */
+    display: flex; /* 플렉스 레이아웃 */
+}
+
+/* 공지 사항 왼쪽 부분 스타일 */
+#body_layout .notice .inner .inner_left {
+    color: #fff; /* 글자 색상 */
+    width: 60%; /* 너비 */
+    background-color: #000; /* 배경 색상 */
+    display: flex; /* 플렉스 레이아웃 */
+    align-items: center; /* 수직 정렬 */
+}
+
+/* 공지 사항 왼쪽 제목 스타일 */
+#body_layout .notice .inner .inner_left .tit {
+    color: #fff; /* 글자 색상 */
+    font-size: 17px; /* 폰트 크기 */
+    font-weight: 700; /* 폰트 두께 */
+    margin-right: 20px; /* 우측 여백 */
+}
+
+/* 공지 사항 왼쪽 내용 라인 스타일 */
+#body_layout .notice .inner .inner_left .notice_line {
+    height: 60px; /* 높이 */
+    flex-grow: 1; /* 공간 차지 */
+    overflow: hidden; /* 오버플로우 숨김 */
+}
+
+/* 공지 사항 왼쪽 스와이퍼 슬라이드 스타일 */
+#body_layout .notice .inner .inner_left .swiper-slide {
+    height: 60px; /* 높이 */
+    display: flex; /* 플렉스 레이아웃 */
+    align-items: center; /* 수직 정렬 */
+}
+
+/* 공지 사항 왼쪽 아이콘 스타일 */
+#body_layout .notice .inner .inner_left .material-symbols-outlined {
+    width: 60px; /* 너비 */
+    height: 60px; /* 높이 */
+    display: flex; /* 플렉스 레이아웃 */
+    justify-content: center; /* 가로 정렬 */
+    align-items: center; /* 수직 정렬 */
+}
+
+/* 공지 사항 오른쪽 부분 스타일 */
+#body_layout .notice .inner .inner_right {
+    width: 40%; /* 너비 */
+    background-color: #fff; /* 배경 색상 */
+    display: flex; /* 플렉스 레이아웃 */
+    justify-content: flex-end; /* 우측 정렬 */
+    align-items: center; /* 수직 정렬 */
+}
+
+/* 공지 사항 오른쪽 제목 스타일 */
+#body_layout .notice .inner .inner_right .tit {
+    font-size: 17px; /* 폰트 크기 */
+    font-weight: 700; /* 폰트 두께 */
+}
+
+/* 공지 사항 오른쪽 아이콘 스타일 */
+#body_layout .notice .inner .inner_right .material-symbols-outlined {
+    width: 60px; /* 너비 */
+    height: 60px; /* 높이 */
+    cursor: pointer; /* 커서 모양 변경 */
+    display: flex; /* 플렉스 레이아웃 */
+    justify-content: center; /* 가로 정렬 */
+    align-items: center; /* 수직 정렬 */
+    font-size: 30px; /* 폰트 크기 */
+}
+/* 프로모션 섹션 스타일 */
+#body_layout .promotion {
+    position: relative; /* 상대 위치 */
+    height: 693px; /* 높이 */
+    background-color: whitesmoke; /* 배경 색상 */
+    overflow: hidden; /* 오버플로우 숨김 */
+}
+
+/* 프로모션 슬라이더 컨테이너 스타일 */
+#body_layout .promotion .swiper-container {
+    width: 100%; /* 너비 */
+    height: 100%; /* 높이 */
+    position: relative; /* 상대 위치 */
+}
+
+/* 프로모션 슬라이드 스타일 */
+#body_layout .promotion .swiper-slide {
+    position: relative; /* 상대 위치 */
+    display: flex; /* 플렉스 레이아웃 */
+    justify-content: center; /* 가로 정렬 */
+    align-items: center; /* 수직 정렬 */
+    opacity: 0.5; /* 투명도 */
+    transition: opacity 0.4s; /* 투명도 전환 효과 */
+}
+
+/* 프로모션 슬라이드 이미지 스타일 */
+#body_layout .promotion .swiper-slide img {
+    width: 100%; /* 너비 */
+    height: auto; /* 자동 높이 */
+    display: block; /* 블록 요소 */
+}
+
+/* 프로모션 슬라이드 버튼 스타일 */
+#body_layout .promotion .swiper-slide .btn {
+    position: absolute; /* 절대 위치 */
+    bottom: 130px; /* 하단 위치 */
+    left: 50%; /* 중앙 정렬 */
+    transform: translateX(-50%); /* 수평 중앙 정렬 */
+    background-color: #ffffff; /* 배경 색상 */
+    color: #333; /* 글자 색상 */
+    padding: 10px 20px; /* 여백 */
+    border-radius: 4px; /* 모서리 둥글게 */
+    text-align: center; /* 가운데 정렬 */
+    text-decoration: none; /* 밑줄 없음 */
+    font-size: 16px; /* 폰트 크기 */
+}
+
+/* 프로모션 슬라이드 버튼 호버 상태 스타일 */
+#body_layout .promotion .swiper-slide .btn:hover {
+    color: #fff; /* 글자 색상 변경 */
+    background-color: #000; /* 배경 색상 변경 */
+}
+
+/* 프로모션 슬라이드 활성 상태 스타일 */
+#body_layout .promotion .swiper-slide.swiper-slide-active {
+    opacity: 1; /* 투명도 변경 */
+}
+
+/* 프로모션 슬라이더 컨트롤 버튼 스타일 */
+#body_layout .promotion .swiper-control {
+    position: absolute; /* 절대 위치 */
+    bottom: 20px; /* 하단 위치 */
+    left: 50%; /* 중앙 정렬 */
+    transform: translateX(-50%); /* 수평 중앙 정렬 */
+    display: flex; /* 플렉스 레이아웃 */
+    justify-content: space-between; /* 공간 분배 */
+    width: calc(100% - 40px); /* 너비 */
+}
+
+/* 프로모션 슬라이더 이전 버튼 스타일 */
+#body_layout .promotion .swiper-prev,
+#body_layout .promotion .swiper-next {
+    width: 40px; /* 너비 */
+    height: 40px; /* 높이 */
+    display: flex; /* 플렉스 레이아웃 */
+    justify-content: center; /* 가로 정렬 */
+    align-items: center; /* 수직 정렬 */
+    cursor: pointer; /* 커서 모양 변경 */
+}
+
+/* 프로모션 슬라이더 이전 버튼 위치 스타일 */
+#body_layout .promotion .swiper-prev {
+    position: absolute; /* 절대 위치 */
+    left: 10px; /* 좌측 위치 */
+}
+
+/* 프로모션 슬라이더 다음 버튼 위치 스타일 */
+#body_layout .promotion .swiper-next {
+    position: absolute; /* 절대 위치 */
+    right: 10px; /* 우측 위치 */
+}
+
+/* 프로모션 슬라이더 페이지네이션 스타일 */
+#body_layout .promotion .swiper-pagination {
+    position: absolute; /* 절대 위치 */
+    bottom: 10px; /* 하단 위치 */
+    left: 50%; /* 중앙 정렬 */
+    transform: translateX(-50%); /* 수평 중앙 정렬 */
+}
+
+/* 프로모션 슬라이더 페이지네이션 불릿 스타일 */
+#body_layout .promotion .swiper-pagination .swiper-pagination-bullet {
+    width: 1px; /* 너비 */
+    height: 1px; /* 높이 */
+    background-color: aliceblue; /* 배경 색상 */
+    border-radius: 50%; /* 둥글게 */
+    margin-right: 6px; /* 우측 여백 */
+}
+
+/* 프로모션 슬라이더 페이지네이션 활성 불릿 스타일 */
+#body_layout .promotion .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: transparent; /* 배경 색상 */
+    border: 3px solid violet; /* 테두리 색상 */
+    box-sizing: border-box; /* 테두리 박스 사이징 */
+}
+
+
+#body_layout .rewards {
+    background-color: #38643e;
+    padding: 25px 0;
+}
+
+#body_layout .rewards .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#body_layout .rewards .rewards_content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* 컨텐츠의 최대 너비를 설정합니다. 필요에 따라 조정하세요. */
+}
+
+#body_layout .rewards img {
+    max-width: 175px; /* 이미지의 최대 너비를 설정합니다. 필요에 따라 조정하세요. */
+    height: auto;
+    margin-right: 20px; /* 이미지와 텍스트 사이의 간격을 조정합니다. */
+}
+
+
+#body_layout .rewards .rewards_text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+#body_layout .rewards .rewards_text_top,
+#body_layout .rewards .rewards_text_bot {
+    margin-bottom: 20px; /* 섹션 간의 간격을 설정합니다. */
+}
+
+#body_layout .rewards .rewards_text_left {
+    margin-bottom: 20px; /* 텍스트와 버튼 간의 간격을 설정합니다. */
+}
+
+#body_layout .rewards .rewards_text_right {
+    display: flex;
+    gap: 10px; /* 버튼 간의 간격을 설정합니다. */
+}
+
+#body_layout .rewards .rewards_text_right .btn {
+    width: auto; /* 버튼의 너비를 자동으로 조정합니다. */
+    color: #fff; /* 버튼 텍스트 색상을 흰색으로 설정합니다. */
+    border: 2px solid #fff; /* 버튼의 테두리 색상도 흰색으로 설정합니다. */
+    background-color: transparent; /* 버튼 배경 색상을 투명으로 설정합니다. */
+}
+
+#body_layout .rewards .rewards_text_right .btn:hover {
+    background-color: #fff; /* 버튼 호버 시 배경 색상 */
+    color: #333; /* 버튼 호버 시 텍스트 색상 */
+}
+
+
+
+
+
+
+/* 시즌 제품 섹션 스타일링 */
+#body_layout .season-product {
+    position: relative;
+    background-image: url(../image/스타벅스배경및.jpg); /* 배경 이미지 설정 */
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center; /* 배경 이미지 위치 조정 */
+    height: 700px; /* 섹션 높이 설정 */
+    display: flex; /* 플렉스 박스 사용 */
+    align-items: center; /* 수직 정렬 */
+    justify-content: center; /* 수평 정렬 */
+    padding: 20px; /* 내부 여백 설정 */
+}
+
+#body_layout .season-product .inner {
+    display: flex; /* 플렉스 박스 사용 */
+    align-items: center; /* 수직 정렬 */
+    justify-content: center; /* 중앙 정렬 */
+    width: 100%; /* 전체 너비 사용 */
+    max-width: 1200px; /* 최대 너비 설정 (필요에 따라 조정) */
+}
+
+#body_layout .season-product > img {
+    max-width: 500px; /* 이미지 최대 너비 설정 */
+    height: auto; /* 이미지 자동 높이 조정 */
+    border-radius: 8px; /* 이미지 모서리 둥글게 설정 */
+    margin-right: 20px; /* 이미지와 텍스트 간의 간격 설정 */
+}
+
+#body_layout .season-product .text-group {
+    color: #fff; /* 텍스트 색상 설정 */
+    max-width: 500px; /* 텍스트 그룹의 최대 너비 설정 */
+}
+
+#body_layout .season-product .text-group .title {
+    color: #555; /* 제목 색상 설정 */
+    font-size: 16px; /* 제목 폰트 크기 설정 */
+    font-weight: 900; /* 제목 폰트 두께 설정 */
+    margin-bottom: 10px; /* 제목과 설명 사이의 간격 설정 */
+}
+
+#body_layout .season-product .text-group .title strong {
+    display: block; /* 강조된 텍스트를 블록으로 설정 */
+    font-size: 20px; /* 강조된 텍스트 폰트 크기 설정 */
+}
+
+#body_layout .season-product .text-group .description {
+    color: #656565; /* 설명 색상 설정 */
+    margin-bottom: 20px; /* 설명과 버튼 사이의 간격 설정 */
+    font-size: 14px; /* 설명 폰트 크기 설정 */
+}
+
+#body_layout .season-product .text-group .btn {
+    display: inline-block;
+    padding: 10px 20px; /* 버튼 내 여백 설정 */
+    border: 2px solid #333; /* 버튼 테두리 설정 */
+    border-radius: 4px; /* 버튼 모서리 둥글게 설정 */
+    background-color: #fff; /* 버튼 배경색 설정 */
+    color: #333; /* 버튼 글자색 설정 */
+    text-decoration: none; /* 버튼 텍스트 장식 제거 */
+    font-size: 16px; /* 버튼 폰트 크기 설정 */
+    transition: background-color 0.3s, color 0.3s; /* 버튼 호버 효과를 위한 트랜지션 설정 */
+}
+
+#body_layout .season-product .text-group .btn:hover {
+    background-color: #333; /* 버튼 호버 시 배경색 설정 */
+    color: #fff; /* 버튼 호버 시 글자색 설정 */
+}
+
+
+
+
+
+#body_layout .reserve-coffee {
+    background-image: url(../image/reserve_bg.jpg);
+    width: auto;
+}
+
+#body_layout .reserve-coffee .inner {
+    height: 480px;
+}
+
+#body_layout .reserve-coffee .text-group {
+
+}
+
+#body_layout .reserve-coffee {}
+
+
+
+
+
+
+
+
+#body_layout .pick-your-favorite {
+    background-image: url('../image/스타벅스배경및및.jpg');
+    background-attachment: fixed;
+    background-size: cover; /* 배경 이미지 크기 조정 */
+    background-position: center; /* 배경 이미지 위치 조정 */
+    background-repeat: no-repeat;
+    
+  
+}
+
+#body_layout .pick-your-favorite .inner {
+    padding: 110px 0;
+}
+
+#body_layout .pick-your-favorite .inner .text-group {
+    width: 360px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+#body_layout .pick-your-favorite .text-group .inner .title{
+    
+}
+
+#body_layout .pick-your-favorite .text-group .description{
+    margin: 40px 0 30px 0;
+}
+
+
+
+#body_layout .reserve-magazine {
+    background-image: url(../image/reserve_bg_pc.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    
+}
+
+#body_layout .reserve-magazine .inner {
+    height: 400px;
+  
+}
+
+#body_layout .reserve-magazine .inner .text-group .title {
+    position: relative;
+    /* padding: 115px 45px 0; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50% -50%); */
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    z-index: 10;
+
+}
+
+#body_layout .reserve-magazine .inner .text-group .title {
+    width: 510px;
+}
+
+#body_layout .reserve-magazine .inner .btn {
+    margin: 0 auto;
+}
+
+#body_layout .reserve-magazine .inner .bg {
+
+}
+
+
+
+
+
+
+#body_layout .find-store {
+    background-image: url(../image/find_store_bg.jpg);
+    background-size: 100% auto;
+    height: 400px;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}   
+
+#body_layout .find-store .inner {
+
+}
+
+#body_layout .find-store .inner .img {
+
+}
+
+
+
+#body_layout .find-store .inner .texture1 {
+   height: 142px;
+   left: 520px;
+   position: absolute;
+   top: -60px;
+   width: 340px;
+   z-index: 4;
+}
+
+#body_layout .find-store .inner .texture2 {
+    right: 190px;
+    height: 102px;
+    position: absolute;
+    top: 298px;
+    width: 230px;
+    z-index: 4;
+}
+
+#body_layout .find-store .inner .img1{
+    height: 312px;
+    left: 160px;
+    position: absolute;
+    top: 0;
+    width: 366px;
+    z-index: 4;
+
+}
+
+#body_layout .find-store .inner .img2 {
+    height: 228px;
+    left: 390px;
+    position: absolute;
+    top: 149px;
+    width: 228px;
+    z-index: 5;
+}
+
+#body_layout .find-store .inenr .text-group {
+    
+}
+
+#body_layout .find-store .inner .text-group .title{
+    right: 260px;
+    height: 54px;
+    position: absolute;
+    overflow: hidden;
+    text-indent: -20000px;
+    top: 100px;
+    width: 374px;
+    z-index: 4;
+}
+
+#body_layout .find-store .inner .text-group .description{
+    right: 278px;
+    height: 92px;
+    position: absolute;
+    overflow: hidden;
+    text-indent: -20000px;
+    top: 168px;
+    width: 366px;
+    z-index: 4;
+}
+
+#body_layout .find-store .inenr .text-group .btn {
+    margin: 0 auto;
+}
+
+
+
+
+
+
+#body_layout .foot-awards {
+    background-color: #333333;
+}
+
+#body_layout .foot-awards .inner {
+    padding: 40px 0;
+    width: 1100px;
+    height: 120px;
+}
+
+
+
+#body_layout .foot-awards .swiper-container {
+    width: 100%;
+    height: 300px; 
+}
+
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+#body_layout .foot-awards .swiper-wrapper {
+    display: flex; 
+}
+
+#body_layout .foot-awards .swiper-slide {
+    flex-shrink: 0;
+    width: 20%; 
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+}
+
+#body_layout .foot-awards .swiper-slide img {
+    width: 100%;
+    height: auto; 
+}
+
+#body_layout .foot-awards .swiper-prev, .foot-awards .swiper-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+#body_layout .foot-awards .swiper-prev {
+    left: 10px;
+}
+
+#body_layout .foot-awards .swiper-next {
+    right: 10px;
+}
+
+#body_layout .material-icons {
+    font-size: 24px;
+}
+
+
+
+
+
+#foot_layout {
+    background-color: #333333;
+    border-top: 1px solid #333;
+}
+
+#foot_layout .inner {
+    padding: 40px 0 60px 0;
+}
+
+#foot_layout .menu {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+}
+
+#foot_layout .menu li {
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+
+#foot_layout .menu li::before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: #555;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -1px;
+    margin: auto;
+}
+
+
+#foot_layout  .menu  li a.green {
+    color: #669900;
+}
+
+#foot_layout .btn-group {
+    
+    display: flex;
+    justify-content: center;
+}
+
+#foot_layout .btn-group .btn {
+    margin-right: 10px;
+    font-size: 12px;
+    
+}
+
+#foot_layout .btn-group .btn.btn-on {
+     color: #ffffff;
+     background-color: #333333;
+     border-color: #fff;
+    
+}
+
+#foot_layout .btn-group .btn.btn-on:hover {
+    color: #000000;
+    background-color: #ffffff;
+    
+   
+}
+
+#foot_layout  .info {
+    display: flex;
+    justify-content: center;
+    color: #ccc;
+    padding: 30px ;
+    margin: 0 auto;
+}
+
+#foot_layout .copyright {
+   
+    color: #ccc;
+    text-align: center;
+}
+
+#top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9;
+    width: 42px;
+    height: 42px;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
